@@ -4,8 +4,11 @@ import { useCallback, useEffect, useState } from "react";
 
 const Hero = () => {
     const [windowWidth, setWindowWidth] = useState(0);
+    const [windowHeight, setWindowHeight] = useState(0);
+
     const handleResize = useCallback(() => {
         setWindowWidth(window.innerWidth);
+        setWindowHeight(window.innerHeight);
     }, []);
 
     useEffect(() => {
@@ -17,7 +20,9 @@ const Hero = () => {
             };
         }
     }, [handleResize]);
-    const hideComputersCanvas = windowWidth <= 640;
+
+    const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+    const hideComputersCanvas = (isPortrait && windowWidth <= 640) || windowHeight <= 420;
     return (
         <section className={`relative w-full mx-auto ${hideComputersCanvas ? 'h-96' : 'h-screen'}`}>
             <div
