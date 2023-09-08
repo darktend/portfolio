@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
-import { SectionWrapper } from '../hoc';
+import { SectionWrapper } from "../hoc";
 
 const About = () => {
   return (
@@ -11,8 +11,8 @@ const About = () => {
         <h2 className={styles.sectionHeadText}>About</h2>
       </motion.div>
       <motion.p
-        variants={fadeIn('', '', 0.1, 1)}
-        className='mt-4 text-secondary text-[17px] leading-[30px]'
+        variants={fadeIn("", "", 0.1, 1)}
+        className="mt-4 text-secondary text-[17px] leading-[30px]"
       >
         I'm a skilled software developer with experience in TypeScript and
         JavaScript, and expertise in frameworks like React, Node.js, and
