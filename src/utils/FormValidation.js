@@ -6,7 +6,7 @@ const validateEmail = (email) => {
     return ErrorMessages.Required("email");
   }
   if (!EMAIL_PATTERN.test(email)) {
-    return ErrorMessages.InvalidEmail;
+    return ErrorMessages.InvalidEmail('mail');
   }
 };
 const validateInput = (name) => {
